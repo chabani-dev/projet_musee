@@ -6,19 +6,21 @@ import { db } from '../config/firebase'
 import { getDocs , collection , doc , deleteDoc  } from "firebase/firestore"
 
 
-export default function ListeOeuvres({update , setUpdate}) {
+export default function ListeOeuvres() {
     const [oeuvre , setOeuvre] = useState([])
     const [id, setId] = useState("");
 
-
+const [update , setUpdate]= useState (true)
     useEffect( function() {
         getDocs(collection(db, "Oeuvres"))
             .then(function(reponse){
                 const resultat = reponse.docs.map(function(doc){
                     return {...doc.data(), id : doc.id }
                 })
+                console.log(resultat)
                 setOeuvre(resultat)
             })
+            
     } , [update])
 
     function supprimer( id ){
@@ -56,7 +58,7 @@ export default function ListeOeuvres({update , setUpdate}) {
                     <Text> Description : {item.description} multiline={true}
           numberOfLines={5}</Text>
           
-                    <View style={{ flexDirection : "row" }}>
+                    <View style={{ flexDirection : "row" , justifyContent:"space-evenly", marginTop : 10}}>
                         <Button title={'modifier'} onPress={function(){
                             setId(item.id)
                         }} color={'orange'} />

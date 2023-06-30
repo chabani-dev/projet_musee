@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
   },
-  box : { color: "#FF2171" , fontSize : 20 , fontWeight: "600" , margin:30 , textAlign:"center"},
-  btn : { backgroundColor : "red" , padding : 10 , width : "50%" , borderRadius : 10 , textAlign : "center" , fontSize : 22, marginLeft:20 }
+  box : { color: "#FF2171" , fontSize : 20 , fontWeight: "600" , textAlign:"center" , margin:20},
+  btn : { backgroundColor : "#E7B10A" , padding : 10 , width : "50%" , borderRadius : 10 ,
+  fontSize : 22, textAlign:"center" ,marginLeft:50}
 });

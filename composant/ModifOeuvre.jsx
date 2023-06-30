@@ -53,7 +53,10 @@ export default function ModifOeuvre({ item, setId, setUpdate }) {
         style={styles.input}
         onChangeText={function (valeurSaisie) {
           remplirOeuvres(valeurSaisie, "description");
+          
         }}
+        multiline={true}
+        numberOfLines={5}
         value={oeuvres.description}
       />
       <View>
